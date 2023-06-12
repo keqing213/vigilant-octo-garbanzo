@@ -1,204 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-     <head>
-          <meta charset="UTF-8" />
-          <meta
-               name="viewport"
-               content="width=device-width, initial-scale=1.0"
-          />
-          <title>Alooo Ayyy</title>
-          <style>
-               @import url("https://fonts.googleapis.com/css?family=Comic+Neue&display=swap");
 
-               body {
-                    font-family: "Comic Neue", cursive;
-                    min-height: 100vh;
-                    display: grid;
-                    justify-items: center;
-                    align-items: center;
-                    margin: 0;
-                    padding: 0;
-                    transition: all 1500ms ease-in-out;
-                    background: #e3f2fd;
-               }
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Welcome!</title>
+     <link rel="stylesheet" href="assets/css/styles.css">
+</head>
 
-               #app {
-                    height: 90vh;
-                    display: grid;
-                    justify-items: center;
-                    align-items: center;
-                    margin: 3vh;
-               }
-
-               footer {
-                    width: 100%;
-                    height: 10vh;
-                    display: grid;
-                    justify-items: center;
-                    align-items: center;
-               }
-
-               footer div a {
-                    position: relative;
-                    text-decoration: none;
-               }
-
-               footer div a:hover::before {
-                    /* background: linear-gradient(#ead6ee, #a0f1ea); */
-                    opacity: 0.8;
-                    top: -2px;
-                    bottom: -2px;
-               }
-
-               .a-pagi::before,
-               .a-sore::before,
-               .a-malam::before {
-                    content: " ";
-                    position: absolute;
-                    bottom: 2px;
-                    left: 0;
-                    right: 0;
-                    top: calc(100% - 8px);
-                    transition: all 120ms ease-in-out;
-                    z-index: -1;
-               }
-
-               .a-pagi:hover::before,
-               .a-sore:hover::before,
-               .a-malam:hover::before {
-                    opacity: 0.8;
-                    top: -2px;
-                    bottom: -2px;
-               }
-
-               .a-pagi::before {
-                    background: #eeff41;
-               }
-
-               .a-sore::before {
-                    background: #e3f2fd;
-               }
-
-               .a-malam::before {
-                    background: #607d8b;
-               }
-          </style>
-     </head>
-     <body>
-          <div id="app">
-               <h1>
-                    <span id="typed"></span>
-               </h1>
-          </div>
-          <footer>
-               <div>
-                    created with <span style="color: red">&hearts;</span> by
-                    <a
-                         class="link"
-                         href="https://instagram.com/e31f2x"
-                         target="_blank"
-                         rel="nofollow"
-                         >Evan</a
-                    >
+<body>
+     <section class="bg-slate-900 h-screen flex flex-col items-center justify-center">
+          <h1 class="font-Rubik text-4xl text-gray-100 p-4">Login</h1>
+          <div class="bg-gray-700 w-full max-w-sm md:max-w-md rounded-lg shadow-sm shadow-black">
+               <div class="p-6 space-y-6">
+                    <form action="#" class="mt-2">
+                         <div>
+                              <input type="text" name="email" id="email" placeholder="Email"
+                                   class="mb-5 block p-2 text-gray-100 text-lg font-Rubik bg-slate-600 w-full rounded-lg h-10 hover:bg-slate-500 focus:ring-2 focus:ring-slate-100">
+                              <input type="text" name="password" id="password" placeholder="Password"
+                                   class="block p-2 text-gray-100 text-lg font-Rubik bg-slate-600 w-full rounded-lg h-10 hover:bg-slate-500 focus:ring-2 focus:ring-slate-100">
+                         </div>
+                    </form>
                </div>
-          </footer>
+          </div>
+     </section>
+</body>
 
-          <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-          <script>
-               let name = localStorage.name || "";
-               if (window.location.search.substr(1) != "") {
-                    name = decodeURIComponent(window.location.search.substr(1));
-                    localStorage.name = name;
-               }
-               let theme = {
-                    pagi: {
-                         body: "#e3f2fd",
-                         text: "#000",
-                    },
-                    sore: {
-                         body: "#ffd54f",
-                         text: "#37474f",
-                    },
-                    malam: {
-                         body: "#212121",
-                         text: "#fff",
-                    },
-               };
-               let now = "";
-               const typed = new Typed("#typed", {
-                    strings: [""],
-                    typeSpeed: 60,
-                    showCursor: false,
-               });
-
-               function changeTheme() {
-                    const word =
-                         "Selamat " +
-                         now.slice(0, 1).toUpperCase() +
-                         now.slice(1) +
-                         " ayang Aydinn cantik, i love you ❤️" +
-                         name;
-                    tmpNow = now == "siang" ? "pagi" : now;
-                    removeClassLink();
-                    document.querySelectorAll(".link").forEach((el) => {
-                         el.classList.add(
-                              "a-" + (tmpNow == "siang" ? "pagi" : tmpNow)
-                         );
-                    });
-                    document.body.style.background = theme[tmpNow].body;
-                    document.querySelector("#app").style.color =
-                         theme[tmpNow].text;
-                    document.querySelector("footer").style.color =
-                         theme[tmpNow].text;
-                    document.querySelectorAll(".link").forEach((el) => {
-                         el.style.color = theme[tmpNow].text;
-                    });
-                    typed.strings = [word];
-                    document.title = word;
-                    typed.reset(1);
-               }
-
-               function tmpChangeTheme() {
-                    now =
-                         now == "pagi" || now == "siang"
-                              ? "sore"
-                              : now == "sore"
-                              ? "malam"
-                              : now == "malam"
-                              ? "pagi"
-                              : "";
-                    changeTheme();
-               }
-
-               function removeClassLink() {
-                    document.querySelectorAll(".link").forEach((el) => {
-                         const _ = el.classList;
-                         _.remove("a-pagi");
-                         _.remove("a-sore");
-                         _.remove("a-malam");
-                    });
-               }
-
-               setInterval(() => {
-                    const d = new Date();
-                    const jam = d.getHours();
-                    const oldNow = now;
-                    if (jam >= 6 && jam < 12) {
-                         now = "pagi";
-                    } else if (jam >= 12 && jam < 15) {
-                         now = "siang";
-                    } else if (jam >= 15 && jam < 18) {
-                         now = "sore";
-                    } else if ((jam >= 18 && jam <= 24) || jam < 6) {
-                         now = "malam";
-                    }
-
-                    oldNow != now ? changeTheme() : "";
-               }, 150);
-          </script>
-          <script
-               src="https://cdn.rawgit.com/bungfrangki/efeksalju/2a7805c7/efek-salju.js"
-               type="text/javascript"
-          ></script>
-     </body>
 </html>
