@@ -6,13 +6,14 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Welcome!</title>
-     <link rel="stylesheet" href="assets/css/styles.css">
+     <link rel="stylesheet" href="assets/css/main.css">
+     <link rel="stylesheet" href="assets/css/add.css">
 </head>
 
-<body>
+<body class="bg-[#f3f4f5]">
      <!-- begin nav -->
      <nav>
-          <div class="w-full md:h-[10vh] bg-gray-900 top-0 md:px-10 flex items-center justify-evenly gap-6 fixed">
+          <div class="w-full md:h-[13vh] bg-[#0f1923] top-0 md:px-10 flex items-center justify-evenly gap-6 fixed z-50">
                <div>
                     <img class="w-20" src="assets/img/Zepetto_Logo.png" alt="logo zepetto">
                </div>
@@ -57,7 +58,7 @@
                         </svg>
                     </button>
                </div>
-               <div class="py-1 px-5 hover:bg-red-700 bg-red-600 rounded-lg text-center">
+               <div class="py-1 px-5 hover:bg-red-700 bg-[#ff4655] rounded-lg text-center">
                     <a class="font-semibold font-jost text-yellow-50 md:text-lg" href="#">Play Now</a>
                </div>
           </div>
@@ -66,8 +67,59 @@
 
      <!--  start hero sec -->
      <section>
-          <div class="h-screen">
-               <img class="object-cover h-screen w-full" src="assets/img/backdrop.jpg" alt="backdrop">
+          <div style="background-image: url(assets/img/backdrop.jpg); background-size: cover;" class="min-h-screen relative text-center">
+               <div style="
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);">
+                    <p class="font-racing text-3xl text-white">The First Shooter Game in Indonesia</p>
+                    <img src="assets/img/beyondlimit.png" alt="beyond limit">
+                    <button class="btn">
+                         <span class="btn__inner">
+                           <span class="btn__slide"></span>
+                           <span class="btn__content">Give me an invite Riot</span>
+                         </span>
+                    </button>
+               </div>
+               <svg class="absolute top-[80%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1110 200">
+                    <path fill="#f3f4f5" fill-opacity="1" d="M0,64L1440,96L1440,320L0,320Z"></path>
+               </svg>
+          </div>
+     </section>
+
+     <section class="relative min-h-[90vh]">
+          <div style="-webkit-text-stroke: 2px #ffdfe1 ;" class="absolute top-[-130px] font-jost text-[300px] font-extrabold text-[#f3f4f5]">
+               <p class="m-0">BEYOND</p>
+               <p class="absolute top-[60%]">LIMITSSS</p>
+          </div>
+          <!-- bg text outline -->
+          <div class="absolute top-[0%] m-8 min-h-[50vh]">
+               <h1 class="font-jost text-6xl font-extrabold text-[#ff4655]">NEWS</h1>
+               <!-- news card -->
+               <div class="w-full flex justify-between">
+                    <div class="">
+                         <img class="max-w-sm" src="https://source.unsplash.com/random/1280×720" alt="news">
+                         <p class="font-open font-medium text-sm my-4">02/12/2023</p>
+                         <p class="font-jost font-semibold text-xl text-[#ff4655]">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="">
+                         <img class="max-w-sm" src="https://source.unsplash.com/random/1280×720" alt="news">
+                         <p class="font-open font-medium text-sm my-4">02/12/2023</p>
+                         <p class="font-jost font-semibold text-xl text-[#ff4655]">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="">
+                         <img class="max-w-sm" src="https://source.unsplash.com/random/1280×720" alt="news">
+                         <p class="font-open font-medium text-sm my-4">02/12/2023</p>
+                         <p class="font-jost font-semibold text-xl text-[#ff4655]">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <section class="min-h-screen bg-slate-800">
+          <div class="relative">
+               <img class="w-auto h-40" src="assets/img/tarantula.png" alt="">
           </div>
      </section>
 </body>
